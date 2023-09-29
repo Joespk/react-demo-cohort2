@@ -1,0 +1,18 @@
+.Navbartab {
+  width: 100%;
+  height: auto;
+  padding: 18px 18px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px 15px rgb(0, 200, 20, 0.1);
+}
+
+.login {
+  font-size: larger;
+  background-color: black;
+  color: white;
+}
