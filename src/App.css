@@ -4,3 +4,13 @@
   align-items: center;
   gap: 30px;
 }
+
+.feed-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 50%;
+  gap: 10px;
+}
