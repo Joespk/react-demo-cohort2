@@ -6,8 +6,12 @@ interface IPostProps {
 }
 
 const Post = ({ post }: IPostProps) => {
+  const handleClick = (id: number) => {
+    alert(`clicked ${id}`)
+  }
+
   return (
-    <div className={classes.post}>
+    <div onClick={() => handleClick(post.id)} className={classes.post}>
       <p>id: {post.id}</p>
       <p>postedBy: {post.userId}</p>
       <p>title: {post.title}</p>
