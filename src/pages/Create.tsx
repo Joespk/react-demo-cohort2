@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import usePosts from '../hooks/usePost'
+import usePosts from '../hooks/usePosts'
 import classes from './Home.module.css'
 import { useNavigate } from 'react-router'
 
