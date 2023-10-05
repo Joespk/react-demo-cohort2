@@ -9,6 +9,9 @@ const Navbarheading = () => {
         <NavLink className={({ isActive }) => (isActive ? classes.active : classes.inactive)} to="/">
           Feed
         </NavLink>
+        <NavLink className={({ isActive }) => (isActive ? classes.active : classes.inactive)} to="/Create">
+          Create
+        </NavLink>
       </div>
       <div className={classes.menu}>
         <NavLink className={({ isActive }) => (isActive ? classes.active : classes.inactive)} to="/profile">
