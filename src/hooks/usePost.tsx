@@ -1,51 +1,30 @@
 import { useEffect, useState } from 'react'
-import { CreatePostDTO, PostDTO } from '../type/dio'
+import { PostDTO } from '../type/dio'
 import axios from 'axios'
 
-const usePosts = () => {
-  const [posts, setPosts] = useState<PostDTO[] | null>(null)
+const usePost = (id: string) => {
+  const [post, setPost] = useState<PostDTO | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [error, setError] = useState<string>('')
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const res = await axios.get<PostDTO[]>('https://jsonplaceholder.typicode.com/posts')
+        const res = await axios.get<PostDTO>(`https://jsonplaceholder.typicode.com/posts/${id}`)
 
-        setPosts(res.data)
+        setPost(res.data)
       } catch (err) {
-        console.error(err)
+        setError(error)
       } finally {
         setIsLoading(false)
       }
     }
 
     fetchData()
-  }, [])
+  }, [id])
 
-  const createPost = async (newTitle: string, newBody: string) => {
-    const newPostBody: CreatePostDTO = {
-      userId: Math.floor(Math.random() * 1000),
-      title: newTitle,
-      body: newBody,
-    }
-
-    setIsSubmitting(true)
-    try {
-      const res = await axios.post<PostDTO>('https://jsonplaceholder.typicode.com/posts', newPostBody, {
-        headers: { 'Content-Type': 'application/json' },
-      })
-
-      console.log(res.data)
-    } catch (err) {
-      throw new Error('Cannot create post')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  return { posts, isLoading, isSubmitting, createPost }
+  return { post, isLoading, error }
 }
 
-export default usePosts
+export default usePost
