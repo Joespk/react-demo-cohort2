@@ -3,6 +3,21 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  background-image: url(./assets/hlab.team123_the_tunnel_of_dead_in_the_style_of_poster_art_dark_a023a954-c54b-4e1a-9465-ea53fe077813.png);
+  background-size: contain;
+  animation: backgroundChange 10s infinite alternate;
+}
+
+@keyframes backgroundChange {
+  0% {
+    background-image: url(./assets/hlab.team123_the_tunnel_of_dead_in_the_style_of_poster_art_dark_a023a954-c54b-4e1a-9465-ea53fe077813.png);
+  }
+  50% {
+    background-image: url(./assets/hlab.team123_a_picture_of_two_people_in_a_cave_in_the_style_of__6db06449-d983-45aa-b373-3b2735c4545e.png);
+  }
+  100% {
+    background-image: url(./assets/hlab.team123_a_picture_of_two_people_in_a_cave_in_the_style_of__3aa08b15-efee-4784-87da-806763482fe2.png);
+  }
 }
 
 .feed-container {
