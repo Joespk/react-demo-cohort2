@@ -48,6 +48,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   }
 
   const logout = () => {
+    localStorage.clear()
     localStorage.removeItem('token')
     localStorage.removeItem('username')
     setIsLoggedin(false)

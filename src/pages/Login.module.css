@@ -3,8 +3,19 @@
   flex-direction: column;
   width: 400px;
   height: auto;
-  background-color: white;
   padding: 20px 16px;
   border-radius: 10px;
   gap: 5px;
+  animation-name: animatelogin;
+  animation-duration: 10s;
+  animation-iteration-count: 1000;
+}
+
+@keyframes animatelogin {
+  from {
+    background-color: blueviolet;
+  }
+  to {
+    background-color: tomato;
+  }
 }
