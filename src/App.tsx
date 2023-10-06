@@ -23,7 +23,7 @@ function App() {
           <Route path="/Create" element={<Create />} />
         </Route>
 
-        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/" />}>
+        <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
