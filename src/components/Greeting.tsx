@@ -1,25 +1,14 @@
+import { useAuth } from '../providers/AuthProvider'
 import classes from './Greeting.module.css'
-import { useState } from 'react'
 
-interface IGreetingProps {
-  name: string
-  isLoggedIn: boolean
-}
-const Greeting = ({ name, isLoggedIn }: IGreetingProps) => {
-  const [greetingMsg, setGreetingMsg] = useState<string>('Welcome!')
-
-  const handleClick = () => {
-    setGreetingMsg('Hello!')
-  }
+const Greeting = () => {
+  const { username } = useAuth()
 
   return (
-    <>
-      <div className={classes.card}>
-        <h3>{greetingMsg}</h3>
-        <p>{isLoggedIn ? name : 'Unknown'}</p>
-      </div>
-      <button onClick={handleClick}>Change greeting message</button>
-    </>
+    <div className={classes.card}>
+      <h3>Welcome!</h3>
+      <p>{username}</p>
+    </div>
   )
 }
 
